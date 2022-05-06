@@ -1,7 +1,12 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  안녕하세요 저는 뷰프로잭트입니다
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+   <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+  <div>
+    <h4> 원룸</h4>
+    <p>{{price1}}만원</p>
+  </div>
+
 </template>
 
 <script>
@@ -9,6 +14,12 @@ import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
+  data() {
+    return {
+      price1 : 999,
+
+    }
+  },
   components: {
     HelloWorld
   }
