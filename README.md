@@ -1,5 +1,18 @@
 # vdong
 
+## npm 20 사용 
+````
+$ nvm ls
+->     v20.12.0
+lts/iron -> v20.12.0
+```
+
+## 깃시그니쳐
+```
+git config --local user.name "dong"
+git config --local user.email "ultraraptor@naver.com"
+```
+
 ## Project setup
 ```
 yarn install
