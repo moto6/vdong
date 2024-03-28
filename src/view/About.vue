@@ -1,23 +1,22 @@
 <template>
-  <div id='app'>
-    <Header>
+  <!--  <img alt="Vue logo" src="./assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js App"/>--> <!-- Vue 프로젝트 생성 시 존재하는 기본 코드 제거 -->
 
-    </Header>
+  <div>
+    about!
   </div>
-  <router-view />
 </template>
 
-
 <script>
+// import HelloWorld from './components/HelloWorld.vue'  <-- Vue 프로젝트 생성 시 존재하는 기본 코드 제거
+
 export default {
   name: 'App'
   /*components: {  <-- Vue 프로젝트 생성 시 존재하는 기본 코드 제거
     HelloWorld
   }*/
 }
-
 </script>
-
 
 <style>
 #app {
