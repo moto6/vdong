@@ -40,6 +40,21 @@
         <td>{{ data.type }}</td>
       </tr>
     </table>
+    <button type='button' @click='blink'>보이기/숨기기</button>
+    <h1 class='h1' v-if='tableShow'> 보였다가안보였다가 : V-IF
+      <p class='h5'>v-if 는 조건을 만족안하면 아예 랜더링을 안함 "랜더링 변경"</p>
+    </h1>
+    <h1 class='h1' v-show='!tableShow'> 보였다가안보였다가 : V-SHOW
+      <p class='h5'>v-show 는 무조건 랜더링함. 숨겼다가 보였다가만 함 "디스플레이 히든"</p>
+    </h1>
+
+    <br><br><br>
+    <p>
+      레슨런1 : @chage 를 통해서 이벤트콜백을 걸수 있다, 다중데이터는 v-for 를 이용하면 된다
+    </p>
+    <p>
+      레슨런2 : v-if 조건에 따라서 화면에 보이게할수도, 안보이게 할 수도 있음
+    </p>
   </div>
 </template>
 
@@ -55,7 +70,8 @@ export default {
         { value: 'S', type: 'Seoul' },
         { value: 'J', type: 'Jeju' },
         { value: 'B', type: 'Busan' }
-      ]
+      ],
+      tableShow: true
     }
   },
   watch: {
@@ -75,6 +91,9 @@ export default {
     },
     changeReason() {
       alert(this.region)
+    },
+    blink() {
+      this.tableShow = !this.tableShow
     }
   },
   beforeCreate() {
