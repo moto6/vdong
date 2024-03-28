@@ -3,9 +3,18 @@
     <h1>AppHome!</h1>
 
     <div class='button-container'>
+      <a class='button' href='/helloWorld'>helloWorld</a>
+      <a class='button' href='/test'>TestComponent</a>
       <a class='button' href='/about'>About Us</a>
       <a class='button' href='/join'>Join Us</a>
-      <a class='button' href='/life'>Life</a>
+      <a class='button' href='/login'>Login</a>
+      <a class='button' href='/life'>lifeCycle</a>
+      <a class='button' href='/subComp'>subComp</a>
+      <a class='button' href='/'></a>
+      <a class='button' href='/'></a>
+      <a class='button' href='/'></a>
+      <a class='button' href='/'></a>
+
     </div>
   </div>
 </template>

@@ -6,6 +6,8 @@ import HelloWorld from '@/view/HelloWorld.vue'
 import TestComponent from '@/view/TestComponent.vue'
 import LifeCycle from '@/view/LifeCycle.vue'
 import JoinMember from '@/view/JoinMember.vue'
+import AppLogin from '@/view/AppLogin.vue'
+import SubCompDisplay from '@/subcomp/SubcompDisplay.vue'
 
 //Vue.use(VueRouter)
 
@@ -16,7 +18,9 @@ const routes = [
   { path: '/helloWorld', component: HelloWorld },
   { path: '/test', component: TestComponent },
   { path: '/life', component: LifeCycle },
-  { path: '/join', component: JoinMember }
+  { path: '/join', component: JoinMember },
+  { path: '/login', component: AppLogin },
+  { path: '/subComp', component: SubCompDisplay }
 ];
 
 const router = createRouter({

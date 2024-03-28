@@ -10,6 +10,24 @@
       <li class='nav-item'>
         <a class='nav-link' href='#'>Link</a>
       </li>
+
+      <li class='nav-item'>
+        <a class='nav-link' href='#'>tab4</a>
+      </li>
+
+      <li class='nav-item'>
+        <a class='nav-link' href='#'>tab5</a>
+      </li>
+
+      <li class='nav-item'>
+        <a class='nav-link' href='#'>tab6</a>
+      </li>
+
+      <li class='nav-item'>
+        <a class='nav-link' href='#'>tab7</a>
+      </li>
+
+
       <li class='nav-item'>
         <a class='nav-link disabled' aria-disabled='true'>Disabled</a>
       </li>
