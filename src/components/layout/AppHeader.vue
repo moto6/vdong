@@ -39,6 +39,6 @@
 </template>
 <script>
 export default {
-    name: "Header"
+    name: "AppHeader"
 };
 </script>

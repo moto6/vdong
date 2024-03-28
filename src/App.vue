@@ -1,16 +1,20 @@
 <template>
   <div id='app'>
-    <Header>
-
-    </Header>
+    <AppHeader />
+    <div id='content' class='content'>
+      <router-view />
+    </div>
   </div>
-  <router-view />
+
 </template>
 
 
 <script>
+import AppHeader from '@/components/layout/AppHeader.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: { AppHeader }
   /*components: {  <-- Vue 프로젝트 생성 시 존재하는 기본 코드 제거
     HelloWorld
   }*/
@@ -26,6 +30,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
