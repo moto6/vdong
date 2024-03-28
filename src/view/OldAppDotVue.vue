@@ -10,7 +10,7 @@
 <!--</template>-->
 
 <!--<script>-->
-<!--import HelloWorld from './components/HelloWorld.vue'-->
+<!--import HelloWorld from './layout/HelloWorld.vue'-->
 
 <!--export default {-->
 <!--  name: 'App',-->
@@ -20,7 +20,7 @@
 
 <!--    }-->
 <!--  },-->
-<!--  components: {-->
+<!--  layout: {-->
 <!--    HelloWorld-->
 <!--  }-->
 <!--}-->

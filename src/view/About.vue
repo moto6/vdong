@@ -8,11 +8,11 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'  <-- Vue 프로젝트 생성 시 존재하는 기본 코드 제거
+// import HelloWorld from './layout/HelloWorld.vue'  <-- Vue 프로젝트 생성 시 존재하는 기본 코드 제거
 
 export default {
   name: 'App'
-  /*components: {  <-- Vue 프로젝트 생성 시 존재하는 기본 코드 제거
+  /*layout: {  <-- Vue 프로젝트 생성 시 존재하는 기본 코드 제거
     HelloWorld
   }*/
 }

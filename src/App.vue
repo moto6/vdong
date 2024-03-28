@@ -1,21 +1,20 @@
 <template>
   <div id='app'>
     <AppHeader />
-    <div id='content' class='content'>
-      <router-view />
-    </div>
+    <TabBar />
+    <router-view />
   </div>
-
 </template>
 
 
 <script>
-import AppHeader from '@/components/layout/AppHeader.vue'
+import AppHeader from '@/layout/AppHeader.vue'
+import TabBar from '@/layout/TabBar.vue'
 
 export default {
   name: 'App',
-  components: { AppHeader }
-  /*components: {  <-- Vue 프로젝트 생성 시 존재하는 기본 코드 제거
+  components: { TabBar, AppHeader }
+  /*layout: {  <-- Vue 프로젝트 생성 시 존재하는 기본 코드 제거
     HelloWorld
   }*/
 }

@@ -2,9 +2,10 @@ import { createRouter, createWebHistory } from 'vue-router'
 import AppHome from '@/view/AppHome.vue'
 import About from '@/view/About.vue'
 import OldAppDotVue from '@/view/OldAppDotVue.vue'
-import HelloWorld from '@/components/HelloWorld.vue'
-import TestComponent from '@/components/TestComponent.vue'
-import LifeCycle from '@/components/LifeCycle.vue'
+import HelloWorld from '@/view/HelloWorld.vue'
+import TestComponent from '@/view/TestComponent.vue'
+import LifeCycle from '@/view/LifeCycle.vue'
+import JoinMember from '@/view/JoinMember.vue'
 
 //Vue.use(VueRouter)
 
@@ -14,7 +15,8 @@ const routes = [
   { path: '/old', component: OldAppDotVue },
   { path: '/helloWorld', component: HelloWorld },
   { path: '/test', component: TestComponent },
-  { path: '/life', component: LifeCycle }
+  { path: '/life', component: LifeCycle },
+  { path: '/join', component: JoinMember }
 ];
 
 const router = createRouter({
