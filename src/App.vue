@@ -6,6 +6,7 @@
   </header>
   <body>
     <!--    <MenuBar />-->
+    <DraggableTab/>
     <router-view />
   </body>
   <footer>
@@ -20,11 +21,12 @@
 import TabBar from '@/layout/TabBar.vue'
 import AppFooter from '@/layout/AppFooter.vue'
 import AppHeader from '@/layout/AppHeader.vue'
+import DraggableTab from '@/layout/poc/DraggableTab.vue'
 // import MenuBar from '@/layout/MenuBar.vue'
 
 export default {
   name: 'App',
-  components: { AppHeader, AppFooter, TabBar }
+  components: { DraggableTab, AppHeader, AppFooter, TabBar }
   /*layout: {  <-- Vue 프로젝트 생성 시 존재하는 기본 코드 제거
     HelloWorld
   }*/

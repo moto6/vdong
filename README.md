@@ -2,7 +2,8 @@
 
 ### 참고할만한거
 - https://bootstrap-vue.org/docs/components : 뷰에서 컴포넌트 쉽게 쓸수 있도록 만들어놔서 개꿀임
-
+- npm install json-server
+- json-generator : https://json-generator.com/
 ## npm 20 사용 
 ```
 $ nvm ls

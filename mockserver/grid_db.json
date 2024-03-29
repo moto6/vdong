@@ -1,0 +1,42 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "hello-json-mock",
+      "author": "sudoCode"
+    },
+    {
+      "id": 2,
+      "title": "ma-jack",
+      "author": "alibaba"
+    },
+    {
+      "id": 3,
+      "title": "jim-keller",
+      "author": "risc-v"
+    },
+    {
+      "id": "7823fsdf-234r423-sdf23-234",
+      "title": "VASCO_DA_GAMA",
+      "author": "VASCO_DA_GAMA"
+    }
+  ],
+  "comments": [
+    {
+      "id": 2,
+      "body": "something",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "body": "엔리케 엔히크 캘리컷",
+      "postId": 1
+    }
+  ],
+  "profile": [
+    {
+      "name": "typescript",
+      "id": 222
+    }
+  ]
+}
