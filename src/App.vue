@@ -1,24 +1,30 @@
 <template>
-  <header>
-    <AppHeader />
-
-    <TabBar />
-  </header>
   <div id='app'>
-    <MenuBar />
+    <header>
+      <AppHeader/>
+      <TabBar />
+  </header>
+  <body>
+    <!--    <MenuBar />-->
     <router-view />
+  </body>
+  <footer>
+    <AppFooter/>
+  </footer>
+
   </div>
 </template>
 
 
 <script>
-import AppHeader from '@/layout/AppHeader.vue'
 import TabBar from '@/layout/TabBar.vue'
-import MenuBar from '@/layout/MenuBar.vue'
+import AppFooter from '@/layout/AppFooter.vue'
+import AppHeader from '@/layout/AppHeader.vue'
+// import MenuBar from '@/layout/MenuBar.vue'
 
 export default {
   name: 'App',
-  components: { MenuBar, TabBar, AppHeader }
+  components: { AppHeader, AppFooter, TabBar }
   /*layout: {  <-- Vue 프로젝트 생성 시 존재하는 기본 코드 제거
     HelloWorld
   }*/

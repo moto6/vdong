@@ -11,9 +11,9 @@
       <a class='button' href='/life'>lifeCycle</a>
       <a class='button' href='/subComp'>subComp</a>
       <a class='button' href='/'></a>
-      <a class='button' href='/'></a>
-      <a class='button' href='/'></a>
-      <a class='button' href='/'></a>
+      <a class='button' href='/ListComm'>ListComm</a>
+      <a class='button' href='/appHeaderV2'>appHeaderV2</a>
+      <a class='button' href='/bookDetail'>bookDetail</a>
 
     </div>
   </div>
