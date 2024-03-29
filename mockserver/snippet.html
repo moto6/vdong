@@ -1,0 +1,14 @@
+<html>
+<head>
+  <meta http-equiv='Content-Type' content='text/html;charset=UTF-8'>
+  <title>Document</title>
+</head>
+<body>
+<button onclick='{
+          fetch("http://localhost:3000/member")
+            .then((response) => response.json())
+            .then((json) => console.log(json))
+          }'>고객목록조회
+</button>
+</body>
+</html>
