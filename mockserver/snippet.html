@@ -5,10 +5,44 @@
 </head>
 <body>
 <button onclick='{
-          fetch("http://localhost:3000/member")
+          fetch("http://localhost:3000/customers")
             .then((response) => response.json())
-            .then((json) => console.log(json))
-          }'>고객목록조회
+            .then((data) => {
+        if (data.length === 0) {
+          console.error("No data found");
+          return;
+        }
+        console.log(data)
+        const table = document.createElement("table");
+
+        const headerRow = document.createElement("tr");
+        for (const key in data[0]) {
+          const th = document.createElement("th");
+          th.textContent = key;
+          headerRow.appendChild(th);
+        }
+        table.appendChild(headerRow);
+
+        data.forEach((item) => {
+          const tr = document.createElement("tr");
+          for (const key in item) {
+            const td = document.createElement("td");
+            td.textContent = item[key];
+            tr.appendChild(td);
+          }
+          table.appendChild(tr);
+        });
+
+        const dataParagraph = document.getElementById("json_data");
+        dataParagraph.innerHTML = "";
+        dataParagraph.appendChild(table);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }'>고객목록조회
 </button>
+
+<div id='json_data'></div>
 </body>
 </html>
