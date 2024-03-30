@@ -1,7 +1,7 @@
 const MINUTE_TO_MILLIS = 60 * 1000
 const PORT = 3000
 const CIRCUIT_BREAKER_MILLS = 30 * MINUTE_TO_MILLIS
-const HTTP_PATH_PREFIX = 'api/v0'
+const HTTP_PATH_PREFIX = '/api/v0'
 
 const express = require('express')
 const fs = require('fs')
@@ -10,12 +10,19 @@ const { re } = require('@babel/core/lib/vendor/import-meta-resolve')
 
 const args = process.argv
 const app = express()
+const redirects = [
+  { 'source': '/old-path', 'destination': '/new-path' },
+  { 'source': '/customers', 'destination': '/api/v0/customers' },
+  { 'source': '', 'destination': '' }
+]
 
 app.listen(PORT, () => {
   console.log(`\nServer is running at http://localhost:${PORT}`)
   const filePath = jsonFilePath()
   console.log(`circuit breaker after ${CIRCUIT_BREAKER_MILLS / (MINUTE_TO_MILLIS)} min`)
   console.log('DataSource =', filePath)
+  console.log('\nRedirects')
+  redirectRegistration(redirects)
   console.log('\nResources')
   logDynamicEndpoints()
 })
@@ -34,7 +41,7 @@ app.get('/', (req, res) => {
   }
 })
 
-app.get(`/${HTTP_PATH_PREFIX}/:dataName`, (req, res) => {
+app.get(`${HTTP_PATH_PREFIX}/:dataName`, (req, res) => {
   const { dataName } = req.params
   const filePath = jsonFilePath()
   if (!filePath) {
@@ -77,7 +84,7 @@ function logDynamicEndpoints() {
     return
   }
   Object.keys(jsonData).forEach(dataName => {
-    console.log(`http://localhost:${PORT}/${HTTP_PATH_PREFIX}/${dataName}`)
+    console.log(`http://localhost:${PORT}${HTTP_PATH_PREFIX}/${dataName}`)
   })
 }
 
@@ -89,3 +96,19 @@ setTimeout(() => {
   console.log('elapsed... Closing server')
   app.close()
 }, CIRCUIT_BREAKER_MILLS)
+
+const redirectCallback = (sourcePath, destinationPath) => {
+  return (req, res) => {
+    allowAnyOrigins(res)
+    res.redirect(destinationPath)
+  }
+}
+
+function redirectRegistration(redirections) {
+  redirections.forEach(redirection => {
+    console.log(`${redirection.source} => ${redirection.destination}`)
+    app.get(redirection.source,
+      redirectCallback(redirection.source, redirection.destination)
+    )
+  })
+}

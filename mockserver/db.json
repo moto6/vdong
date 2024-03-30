@@ -21,6 +21,8 @@
       "author": "VASCO_DA_GAMA"
     }
   ],
+  "memberArray": [
+  ],
   "comments": [
     {
       "id": 2,
@@ -61,7 +63,7 @@
       "sortedBy": "NONE"
     }
   },
-  "memberArray": [
+  "customers":
     [
       {
         "id": "660674b40e6265d8d8dd638d",
@@ -444,5 +446,4 @@
         "favoriteFruit": "strawberry"
       }
     ]
-  ]
 }
