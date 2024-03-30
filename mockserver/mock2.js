@@ -1,21 +1,27 @@
+const MINUTE_TO_MILLIS = 60 * 1000
+const PORT = 3000
+const CIRCUIT_BREAKER_MILLS = 30 * MINUTE_TO_MILLIS
+const HTTP_PATH_PREFIX = 'api/v0'
+
 const express = require('express')
 const fs = require('fs')
 const path = require('path')
 const { re } = require('@babel/core/lib/vendor/import-meta-resolve')
 
-const app = express()
-const port = 3000
 const args = process.argv
-const retardTimeoutMills = 30 * 60 * 1000 // 자동종료시간 : 30분
+const app = express()
 
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`)
+app.listen(PORT, () => {
+  console.log(`\nServer is running at http://localhost:${PORT}`)
+  const filePath = jsonFilePath()
+  console.log(`circuit breaker after ${CIRCUIT_BREAKER_MILLS / (MINUTE_TO_MILLIS)} min`)
+  console.log('DataSource =', filePath)
+  console.log('\nResources')
   logDynamicEndpoints()
 })
 
 app.get('/', (req, res) => {
   const filePath = jsonFilePath()
-  console.log('DB >', filePath)
   if (!filePath) {
     return res.status(404).send(' ERROR!! File path is required')
   }
@@ -28,7 +34,7 @@ app.get('/', (req, res) => {
   }
 })
 
-app.get('/:dataName', (req, res) => {
+app.get(`/${HTTP_PATH_PREFIX}/:dataName`, (req, res) => {
   const { dataName } = req.params
   const filePath = jsonFilePath()
   if (!filePath) {
@@ -43,7 +49,7 @@ app.get('/:dataName', (req, res) => {
   }
 })
 
-//--
+//-----------------------------------
 
 function jsonFilePath() {
   return path.join(__dirname, args[2])
@@ -71,7 +77,7 @@ function logDynamicEndpoints() {
     return
   }
   Object.keys(jsonData).forEach(dataName => {
-    console.log(`ServeAt: http://localhost:${port}/${dataName}`)
+    console.log(`http://localhost:${PORT}/${HTTP_PATH_PREFIX}/${dataName}`)
   })
 }
 
@@ -82,4 +88,4 @@ function allowAnyOrigins(res) {
 setTimeout(() => {
   console.log('elapsed... Closing server')
   app.close()
-}, retardTimeoutMills)
+}, CIRCUIT_BREAKER_MILLS)

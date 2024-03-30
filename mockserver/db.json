@@ -39,7 +39,29 @@
       "id": 222
     }
   ],
-  "member": [
+  "customStructure": {
+    "count": "2",
+    "data": [
+      {
+        "message": "hello",
+        "occurrenceAt": 2147483647
+      },
+      {
+        "message": "world",
+        "occurrenceAt": 2147983648
+      }
+    ],
+    "paging": {
+      "isEnd": false,
+      "firstPageCount": 0,
+      "currentPageCount": 0,
+      "lastPageCount": 0
+    },
+    "sorted": {
+      "sortedBy": "NONE"
+    }
+  },
+  "memberArray": [
     [
       {
         "id": "660674b40e6265d8d8dd638d",
