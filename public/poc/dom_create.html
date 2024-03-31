@@ -46,15 +46,15 @@
       </div>
 
       <!--생년월일-->
-      <div id='birth-date' class=mb-4'>
+      <div id='birth-date' class='mb-4'>
         <label class='h5 me-3'>Birth Date</label>
-        <div id='birth_wrap' class='d-flex align-items-center me-3'>
+        <div id='birth_wrap' class='d-flex align-items-center'>
           <div id='birth-yyyy'>
-            <input type='text' id='birth-yyyy' class='form-control col-4' maxlength='4' minlength='4' min='1920'
+            <input type='text' id='birth-yyyy' class='form-control col-4 me-3' maxlength='4' minlength='4' min='1920'
               max='2028' placeholder='Year (4 digits)'>
           </div>
-          <div id='birth-mm' class='m-3 col-3'>
-            <select title='birth-mm' class='form-select col-2'>
+          <div id='birth-mm' class='col-3'>
+            <select title='birth-mm' class='form-select'>
               <option>월</option>
               <option value='01'>1</option>
               <option value='02'>2</option>
@@ -76,7 +76,6 @@
               <input type='text' id='birth_dd' class='form-control col-2' maxlength='2' placeholder='일'>
             </span>
           </div>
-
         </div>
         <span class='error_next_box'></span>
       </div>
