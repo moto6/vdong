@@ -1,16 +1,9 @@
 <template>
   <div id='app'>
-    <header>
       <AppHeader/>
       <TabBar/>
-    </header>
-    <body>
-      <router-view/>
-    </body>
-    <footer>
+      <router-view />
       <AppFooter />
-    </footer>
-
   </div>
 </template>
 
@@ -21,7 +14,6 @@
 import TabBar from '@/layout/TabBar.vue'
 import AppFooter from '@/layout/AppFooter.vue'
 import AppHeader from '@/layout/AppHeader.vue'
-// import DraggableTab from '@/layout/poc/DraggableTab.vue'
 
 export default {
   name: 'App',

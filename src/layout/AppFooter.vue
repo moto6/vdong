@@ -1,5 +1,5 @@
 <template>
-
+  <div class='container'>
   <br><br><br><hr>
 
   <h3>푸터@@@</h3>
@@ -24,6 +24,7 @@
       </address>
       <p>email@email.com / 2020-남남-001234</p>
     </div>
+  </div>
   </div>
 </template>
 

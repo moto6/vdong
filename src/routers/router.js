@@ -11,6 +11,7 @@ import SubCompDisplay from '@/subcomp/SubcompDisplay.vue'
 import ListComm from '@/subcomp/ListComm.vue'
 import AppHeaderV2 from '@/layout/AppHeaderV2.vue'
 import BookDetail from '@/view/BookDetail.vue'
+import DraggableTab from '@/layout/poc/DraggableTab.vue'
 
 //Vue.use(VueRouter)
 
@@ -27,7 +28,10 @@ const routes = [
   //
   { path: '/listComm', component: ListComm },
   { path: '/appHeaderV2', component: AppHeaderV2 },
-  { path: '/bookDetail', component: BookDetail }
+  { path: '/bookDetail', component: BookDetail },
+  { path: '/dragtab', component: DraggableTab }
+
+
 ];
 
 const router = createRouter({

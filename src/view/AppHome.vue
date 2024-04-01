@@ -14,6 +14,7 @@
       <a class='button' href='/ListComm'>ListComm</a>
       <a class='button' href='/appHeaderV2'>appHeaderV2</a>
       <a class='button' href='/bookDetail'>bookDetail</a>
+      <a class='button' href='/dragtab'>dragtab</a>
 
     </div>
   </div>
